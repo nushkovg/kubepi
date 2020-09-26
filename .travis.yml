@@ -1,0 +1,19 @@
+sudo: false
+python:
+  - "3.7"
+install:
+  - source tests/travis_install.sh
+before_script:
+  - git config --global user.email "gnuskov@protonmail.com"
+  - git config --global user.name "Goran Nushkov"
+script:
+  - python setup.py develop
+  - |
+    if [[ "$COVERAGE" == "true" ]]; then
+      pre-commit install
+      pre-commit run --all-files
+    fi
+after_success:
+  - if [[ "$COVERAGE" == "true" ]]; then coveralls || echo "failed"; fi
+after_script:
+  - travis-cleanup
