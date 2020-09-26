@@ -1,13 +1,15 @@
-sudo: false
+os: linux
+dist: focal
+language: python
 python:
   - "3.7"
 install:
-  - pip3.7 install setuptools
+  - pip install setuptools
 before_script:
   - git config --global user.email "gnuskov@protonmail.com"
   - git config --global user.name "Goran Nushkov"
 script:
-  - python3.7 setup.py develop
+  - python setup.py develop
   - |
     if [[ "$COVERAGE" == "true" ]]; then
       pre-commit install
