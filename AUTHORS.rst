@@ -2,4 +2,4 @@
 Contributors
 ============
 
-* nushkovg <gnuskov@protonmail.com>
+* Goran Nushkov <https://github.com/nushkovg/>
