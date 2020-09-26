@@ -1,11 +1,13 @@
 sudo: false
 python:
   - "3.7"
+install:
+  - pip3.7 install setuptools
 before_script:
   - git config --global user.email "gnuskov@protonmail.com"
   - git config --global user.name "Goran Nushkov"
 script:
-  - python3 setup.py develop
+  - python3.7 setup.py develop
   - |
     if [[ "$COVERAGE" == "true" ]]; then
       pre-commit install
