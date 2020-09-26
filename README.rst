@@ -6,18 +6,23 @@ KubePI
     :alt: Made with Python
 
 .. image:: https://img.shields.io/travis/nushkovg/kubepi/master
+    :target: https://img.shields.io/travis/nushkovg/kubepi/master
     :alt: Travis (.org) branch
 
 .. image:: https://img.shields.io/pypi/v/kubepi
+    :target: https://img.shields.io/pypi/v/kubepi
     :alt: PyPI
 
 .. image:: https://img.shields.io/pypi/dm/kubepi
+    :target: https://img.shields.io/pypi/dm/kubepi
     :alt: PyPI - Downloads
 
 .. image:: https://img.shields.io/pypi/format/kubepi
+    :target: https://img.shields.io/pypi/format/kubepi
     :alt: PyPI - Format
 
 .. image:: https://img.shields.io/github/license/nushkovg/kubepi
+    :target: https://img.shields.io/github/license/nushkovg/kubepi
     :alt: GitHub
 
 KubePI CLI for easier k1s setup on Raspberry PIs. See `k1s on
