@@ -20,8 +20,6 @@ script:
     fi
 after_success:
   - if [[ "$COVERAGE" == "true" ]]; then coveralls || echo "failed"; fi
-after_script:
-  - travis-cleanup
 
 # Push to PyPI if build is successful
 deploy:
