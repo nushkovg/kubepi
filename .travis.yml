@@ -1,8 +1,11 @@
+# General settings
 os: linux
 dist: focal
 language: python
 python:
   - "3.7"
+
+# Build the package
 install:
   - pip install setuptools
 before_script:
@@ -19,3 +22,14 @@ after_success:
   - if [[ "$COVERAGE" == "true" ]]; then coveralls || echo "failed"; fi
 after_script:
   - travis-cleanup
+
+# Push to PyPI if build is successful
+deploy:
+  provider: pypi
+  username: "__token__"
+  password:
+    secure: hbrsfn+uVYRZGqNuAKOwO6cp4ko8CKlTsdmOKMD9icmxdb0msINs6gncZSklOgVu6P9K+PuMeziMFgB5AMwF6s7rEjr3/X03CSdB4vk2Z7EOIXxCQhzjE2cRTNJNivNWd2tPwplw3YgvQjotYM+s4aporJmcj/s85atGYB2vN9jiV60JGkkgqU8LQJsou0S/B30EfZ9BcqXrfEAweoXlmZW0YpSCtTGHmCeyE1vBRwwi/7JDcAMZp5fLdT0j1dVmHT91uN/RyHD3hBYKFwf0xfohq1tIA75GQBXxXuLp/lRfkZ4CSKlk3Y3yITDS0FiXDuV+jPXxllRSUGPJqEyKeyC6hk2/tvevwSDsopehfD+G5CvPrK/lXK20MP/gMXzq8F/A5C1dJAaPZ3addOeZmsOEKqatxFvgbE+EJWOM0Jur2tMoTRc5Qlqn7NcfSxZJtRop98F39xMXmQ+wrQdAzmXPmPQGvnkmIkRpLCJltAvGXg7HED+8QfbBRvuG508UmpuL8OinueTpR/VP24V9VG7UU4j0D8MCEA3CndWZuqgqSiWK/wdLhJIqo9Sg5TdrTCDsYRrH1qZTyuE42ysyYL81Aqt2SUmjC7ezjpZvlp8NTEZho4XSniPKe8TDPWVY9I9UhUS2NYV3u4aaqxPQUzANNjwad6YOCTPgfibeZkI=
+  distributions: "bdist_wheel"
+  skip_existing: true
+  on:
+    tags: true
