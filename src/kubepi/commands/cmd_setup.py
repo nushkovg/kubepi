@@ -48,7 +48,7 @@ def init(ctx, kube_context):
         ostype)
 
     # Skaffold parameters
-    skaffold_url = 'https://github.com/nushkovg/skaffold/releases/download/v1.14.0-arm/skaffold-{}-arm'.format(
+    skaffold_url = 'https://github.com/nushkovg/skaffold/releases/download/v1.15.0-arm/skaffold-{}-arm'.format(
         ostype)
 
     with click_spinner.spinner():
