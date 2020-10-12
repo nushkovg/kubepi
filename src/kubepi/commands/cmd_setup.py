@@ -41,7 +41,7 @@ def init(ctx, kube_context):
         kubectl_stable.split('\n')[0])
 
     # Helm parameters
-    helm_url = 'https://get.helm.sh/helm-v3.3.1-{}-arm.tar.gz'.format(ostype)
+    helm_url = 'https://get.helm.sh/helm-v3.3.4-{}-arm.tar.gz'.format(ostype)
 
     # K3D parameters
     k3d_url = 'https://github.com/rancher/k3d/releases/download/v3.0.1/k3d-{}-arm'.format(
