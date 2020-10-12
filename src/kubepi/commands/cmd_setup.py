@@ -64,7 +64,8 @@ def init(ctx, kube_context):
         urllib.request.urlretrieve(helm_url, 'bin/helm.tar.gz')
         tar = tarfile.open('bin/helm.tar.gz', 'r:gz')
         for member in tar.getmembers():
-            if member.name == 'helm':
+            if member.isreg():
+                member.name = os.path.basename(member.name)
                 tar.extract('helm', 'bin')
         tar.close()
         os.remove('bin/helm.tar.gz')
