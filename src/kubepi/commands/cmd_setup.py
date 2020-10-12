@@ -63,11 +63,14 @@ def init(ctx, kube_context):
         logger.info('Downloading helm...')
         urllib.request.urlretrieve(helm_url, 'bin/helm.tar.gz')
         tar = tarfile.open('bin/helm.tar.gz', 'r:gz')
+        helm_file = '{}-arm/helm'.format(ostype)
         for member in tar.getmembers():
-            if member.isreg() and member.name == 'helm':
-                tar.extract(member, 'bin')
+            if member.name == helm_file:
+                tar.extract(helm_file, 'bin')
+                os.rename('bin/' + helm_file, 'bin/helm')
         tar.close()
         os.remove('bin/helm.tar.gz')
+        os.removedirs('bin/{}-arm'.format(ostype))
         logger.info('helm downloaded!')
 
         # Download k3d
