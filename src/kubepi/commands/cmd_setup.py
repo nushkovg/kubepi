@@ -41,14 +41,14 @@ def init(ctx, kube_context):
         kubectl_stable.split('\n')[0])
 
     # Helm parameters
-    helm_url = 'https://get.helm.sh/helm-v3.3.4-{}-arm.tar.gz'.format(ostype)
+    helm_url = 'https://get.helm.sh/helm-v3.4.2-{}-arm.tar.gz'.format(ostype)
 
     # K3D parameters
-    k3d_url = 'https://github.com/rancher/k3d/releases/download/v3.0.1/k3d-{}-arm'.format(
+    k3d_url = 'https://github.com/rancher/k3d/releases/download/v3.4.0/k3d-{}-arm'.format(
         ostype)
 
     # Skaffold parameters
-    skaffold_url = 'https://github.com/nushkovg/skaffold/releases/download/v1.15.0-arm/skaffold-{}-arm'.format(
+    skaffold_url = 'https://github.com/nushkovg/skaffold/releases/download/v1.17.2-arm/skaffold-{}-arm'.format(
         ostype)
 
     with click_spinner.spinner():
